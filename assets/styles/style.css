@@ -1,0 +1,28 @@
+/* Aside section styling */
+
+ hr {
+    border: 1px grey solid;
+    width: 320px;
+ }
+
+/* Outline of all containers */
+
+ .container-border {
+    border: 2px black solid;
+ }
+
+/* 5-day forecast: Card styling */
+
+.heading {
+    display: block;
+
+}
+
+.day-forecast {
+    display: inline-block;
+    width: 175px;
+    height: 210px;
+    background-color: red;
+    margin: 15px;
+  
+}
