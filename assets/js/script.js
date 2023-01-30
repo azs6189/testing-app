@@ -1,7 +1,20 @@
-// Declaring local variables for function
+
+// Connect input from the search bbox to the searched variable  
+
+
+// Click event
+
+$("#search-button").click(function (event){
+
+
+//  Prevent default
+event.preventDefault();
+
+// Grab text from input box
+
+var cityName = $("#search-input").val();
 
 // Connecting to the city search API
-var cityName = "London";
 var apiKey = "882d84eda384fa6fdb4ecdcf117ae985";
 var cityQueryURL =
   "http://api.openweathermap.org/geo/1.0/direct?q=" +
@@ -21,9 +34,7 @@ var weatherQueryURL =
   "&appid=" +
   apiKey;
 
-
 // AJAX function: Getting the longitude and latitude from city input
-
 $.ajax({
   url: cityQueryURL,
   method: "GET",
@@ -41,4 +52,6 @@ console.log(response);
 
 });
 });
+});
+
 
