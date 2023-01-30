@@ -14,7 +14,7 @@ var cityName = $("#search-input").val();
 // Connecting to the city search API
 var apiKey = "882d84eda384fa6fdb4ecdcf117ae985";
 var cityQueryURL =
-  "http://api.openweathermap.org/geo/1.0/direct?q=" +
+  "https://api.openweathermap.org/geo/1.0/direct?q=" +
   cityName +
   "&limit=1&appid=" +
   apiKey;
