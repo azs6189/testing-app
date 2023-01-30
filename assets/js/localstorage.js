@@ -1,5 +1,8 @@
 
 function displayLocalStorage (){
+
+
+
     // City name:
         $("#selected-city-heading").text(window.localStorage.getItem("selectedCity")
         + " " + "(" + 
@@ -29,7 +32,7 @@ function displayLocalStorage (){
         
         );
 
-   //  5 day forecast local storage
+   //  5 day forecast from local storage
 
 // Day one 
 
@@ -38,7 +41,31 @@ $("#day-one-temp").text("Temp: " + dayOneWeatherDisplay.temp);
 $("#day-one-wind").text("Wind: " + dayOneWeatherDisplay.wind);
 $("#day-one-humidity").text("Humidity: " + dayOneWeatherDisplay.humidity);
 
+// Day two
 
+var dayTwoWeatherDisplay = JSON.parse((window.localStorage.getItem("dayTwoWeather")));
+$("#day-two-temp").text("Temp: " + dayTwoWeatherDisplay.temp);
+$("#day-two-wind").text("Wind: " + dayTwoWeatherDisplay.wind);
+$("#day-two-humidity").text("Humidity: " + dayTwoWeatherDisplay.humidity);
+
+// Day three
+
+var dayThreeWeatherDisplay = JSON.parse((window.localStorage.getItem("dayThreeWeather")));
+$("#day-three-temp").text("Temp: " + dayThreeWeatherDisplay.temp);
+$("#day-three-wind").text("Wind: " + dayThreeWeatherDisplay.wind);
+$("#day-three-humidity").text("Humidity: " + dayThreeWeatherDisplay.humidity);
+
+// Day four
+var dayFourWeatherDisplay = JSON.parse((window.localStorage.getItem("dayFourWeather")));
+$("#day-four-temp").text("Temp: " + dayFourWeatherDisplay.temp);
+$("#day-four-wind").text("Wind: " + dayFourWeatherDisplay.wind);
+$("#day-four-humidity").text("Humidity: " + dayFourWeatherDisplay.humidity);
+
+// Day five
+var dayFiveWeatherDisplay = JSON.parse((window.localStorage.getItem("dayFiveWeather")));
+$("#day-five-temp").text("Temp: " + dayFiveWeatherDisplay.temp);
+$("#day-five-wind").text("Wind: " + dayFiveWeatherDisplay.wind);
+$("#day-five-humidity").text("Humidity: " + dayFiveWeatherDisplay.humidity);
 
     }
     

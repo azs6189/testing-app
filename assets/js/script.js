@@ -3,6 +3,7 @@
 
 $("#search-button").click(function (event){
 
+
 //  Prevent default
 event.preventDefault();
 
@@ -41,7 +42,8 @@ var longitude = response[0].lon;
     url: weatherQueryURL,
     method: "GET",
 }).then(function (response) {
-console.log(response);
+
+  
 
 // Display today's API results on the page - this needs to be saved to local storage to remain on the page 
 
@@ -78,8 +80,47 @@ wind: response.list[1].wind.speed + " KPH",
 humidity: response.list[1].main.humidity + "%",
 }
 
+var dayTwoWeather = {
+  date: 0,
+  icon: 0,
+  temp: (Math.floor((response.list[2].main.temp) -273.15)) + "°C",
+  wind: response.list[2].wind.speed + " KPH",
+  humidity: response.list[2].main.humidity + "%",
+  }
+  
+  var dayThreeWeather = {
+    date: 0,
+    icon: 0,
+    temp: (Math.floor((response.list[3].main.temp) -273.15)) + "°C",
+    wind: response.list[3].wind.speed + " KPH",
+    humidity: response.list[3].main.humidity + "%",
+    }
+
+    var dayFourWeather = {
+      date: 0,
+      icon: 0,
+      temp: (Math.floor((response.list[4].main.temp) -273.15)) + "°C",
+      wind: response.list[4].wind.speed + " KPH",
+      humidity: response.list[4].main.humidity + "%",
+      }
+
+var dayFiveWeather = {
+      date: 0,
+      icon: 0,
+      temp: (Math.floor((response.list[5].main.temp) -273.15)) + "°C",
+      wind: response.list[5].wind.speed + " KPH",
+      humidity: response.list[5].main.humidity + "%",
+      }
+
+// Saving all to local storage
+
 localStorage.setItem("dayOneWeather", JSON.stringify(dayOneWeather));
-console.log(dayOneWeather);
+localStorage.setItem("dayTwoWeather", JSON.stringify(dayTwoWeather));
+localStorage.setItem("dayThreeWeather", JSON.stringify(dayThreeWeather));
+localStorage.setItem("dayFourWeather", JSON.stringify(dayFourWeather));
+localStorage.setItem("dayFiveWeather", JSON.stringify(dayFiveWeather));
+
+
 
 });
 });
