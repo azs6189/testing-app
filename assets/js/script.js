@@ -1,43 +1,4 @@
 
-// Retreiving:
-
-function displayLocalStorage (){
-// City name:
-    $("#selected-city-heading").text(window.localStorage.getItem("selectedCity")
-    + " " + "(" + 
-    (moment().format("L")) +
-    ")");
-    
-
-// Today's temperature:
-$("#selected-city-temp").text(
-    "Temp: " +
-    (window.localStorage.getItem("todaysTemp") +
-    "°C"
-    ));
-
-// Today's wind:
-$("#selected-city-wind").text(
-    "Wind: " + 
-    (window.localStorage.getItem("todaysWind")) +
-    " KPH");
-    
-
-// Today's humidity
-$("#selected-city-humidity").text(
-    " Humidity: " +
-    (window.localStorage.getItem("todaysHumidity")) +
-    " %"
-    
-    );
-}
-
-// Getting information from local storage and displaying to page if it exists
-if (localStorage.getItem("selectedCity") !== null) {
-    displayLocalStorage();
-}
-
-
 // Click event
 
 $("#search-button").click(function (event){
@@ -107,6 +68,18 @@ localStorage.setItem("todaysHumidity", todaysHumidity);
 $("#selected-city-humidity").text(" Humidity: " + todaysHumidity + " %");
 
 // Display 5-day forecast 
+
+// Day one weather 
+var dayOneWeather = {
+date: 0,
+icon: 0,
+temp: (Math.floor((response.list[1].main.temp) -273.15)) + "°C",
+wind: response.list[1].wind.speed + " KPH",
+humidity: response.list[1].main.humidity + "%",
+}
+
+localStorage.setItem("dayOneWeather", JSON.stringify(dayOneWeather));
+console.log(dayOneWeather);
 
 });
 });
