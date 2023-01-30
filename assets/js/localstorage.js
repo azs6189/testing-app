@@ -72,5 +72,18 @@ $("#day-five-humidity").text("Humidity: " + dayFiveWeatherDisplay.humidity);
     // Getting information from local storage and displaying to page if it exists
     if (localStorage.getItem("selectedCity") !== null) {
         displayLocalStorage();
+
+// Getting buttons from local storage - index the array as the variables, and add the new inputs to front of the array
+
+
+
+// Display last city searched on the button as the text
+
+// Link button value to set city name to this on clock
+
+//  Add click event 
+
+
+
     }
     

@@ -1,14 +1,15 @@
 
-// Click event
-
 $("#search-button").click(function (event){
 
 
 //  Prevent default
 event.preventDefault();
 
+
 // Grab text from input box
 var cityName = $("#search-input").val();
+
+
 
 // Connecting to the city search API
 var apiKey = "882d84eda384fa6fdb4ecdcf117ae985";
@@ -125,6 +126,4 @@ localStorage.setItem("dayFiveWeather", JSON.stringify(dayFiveWeather));
 });
 });
 });
-
-
 
